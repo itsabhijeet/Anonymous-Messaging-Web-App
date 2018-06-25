@@ -1,6 +1,7 @@
 
 from flask import Flask, request, Markup, render_template,redirect,flash,url_for
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+from flask_mail import Mail,Message
 
 app = Flask(__name__)
 app.secret_key = 'abhiportfolio'
@@ -30,7 +31,17 @@ def msg():
          print (email)
          print(msg)
          if form.validate():
-             flash('Recieved :' + name)             
+            #Sending an email to myself
+            app.config['MAIL_SERVER']='smtp.gmail.com'
+            app.config['MAIL_PORT'] = 465
+            app.config['MAIL_USERNAME'] = 'handoverabhi@gmail.com'
+            app.config['MAIL_PASSWORD'] = 'handover'
+            app.config['MAIL_USE_TLS'] = False
+            app.config['MAIL_USE_SSL'] = True
+            mail = Mail(app)            
+            newmsg = Message('!Sarahah', sender = 'handoverabhi@gmail.com', recipients = ['abhijeetown540@outlook.com'])
+            newmsg.html = "<p> Name : " + name + "</p> <br> <p> Email :" + email  + "</p>" + "<br> Message: <p> <b> <i> " + msg + "</b> </i> </p>"
+            mail.send(newmsg)
          else:
              flash('Email Not correct bro!') 
     return render_template('contact.html',form=form)
