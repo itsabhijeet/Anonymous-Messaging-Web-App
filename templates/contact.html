@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+<title>Message--Abhijeet</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/message.css') }}">
+
+<body>
+     
+    <div id="contactForm">
+    
+      <h1>Abhijeet will love to see your message!</h1>
+      <small> Your message will be analyzed to detect its sentiment.(Not by Abhijeet :3) </small>
+      
+      <form action="/message" method="POST">
+        <input placeholder="Name" type="text" name="name" required />
+        <input placeholder="Email" type="email" name="email" required />        
+        <textarea placeholder="Leave Message" name="msg" required></textarea>
+        <input class="formBtn" type="submit" />
+        <input class="formBtn" type="reset" />
+      </form>
+    </div>
+
+</body>
+
+</html>
