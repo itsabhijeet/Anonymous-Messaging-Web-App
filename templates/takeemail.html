@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Email</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/takeemail.css') }}">
+  <style>
+  
+  h2,h3{color: white;} 
+  
+  </style>
+  
+</head>
+
+<body>
+  
+
+  <div class="container">
+  
+  <div class="demo-flex-spacer"></div>
+  <center>
+    <h2> We have sent your message to Abhijeet! (He can only see your messages!)</h2>  
+    <h3 class="demo"> <i>Like what you see? Want your version of Not Sarahah .</h2><br>
+    <h3 class="demo"> Give your email for the same! </h1> </i> </h3>   </center>
+  <div class="webflow-style-input">
+        
+    <form action="http://localhost:5000/takeemail" method="POST">
+    <input class="" name="email" type="email" placeholder="What's your email?"></input>
+    <button type="submit"><i class="icon ion-android-arrow-forward"></i></button>
+    </form>
+  </div>
+  
+
+  <div class="demo-flex-spacer"></div>
+  <h1 class="demo">Thank You!</h1>
+  
+
+</div>
+  
+  
+
+</body>
+
+</html>
