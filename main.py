@@ -12,8 +12,13 @@ app = Flask(__name__)
 app.secret_key = 'abhiportfolio'
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
+<<<<<<< HEAD
 app.config['MAIL_USERNAME'] = '' #confidential
 app.config['MAIL_PASSWORD'] = ''  #confidential
+=======
+app.config['MAIL_USERNAME'] = '' #email
+app.config['MAIL_PASSWORD'] =  #password
+>>>>>>> 238d3c9781a6521b3d70cb36364042eef006ca6c
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -144,4 +149,8 @@ def msg():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     app.run()
+=======
+    app.run() 
+>>>>>>> 238d3c9781a6521b3d70cb36364042eef006ca6c
