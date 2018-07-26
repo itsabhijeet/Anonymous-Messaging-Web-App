@@ -2,21 +2,32 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
-<title>Message--Abhijeet</title>
+<title>{{name}}</title>
 </head>
 <link rel="stylesheet" href="{{ url_for('static',filename='styles/message.css') }}">
 
 <body>
-     
+     <center>
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li><h1><center style="color:powderblue">{{ message }}</center></h1></center></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+     </center>
     <div id="contactForm">
     
-      <h1>Abhijeet will love to see your message!</h1>
-      <small> Your message will be analyzed to detect its sentiment.(Not by Abhijeet :3) </small>
+      <h1>{{name}} will love to see your message!</h1>
       
-      <form action="/message" method="POST">
+      
+      <form action="/user/{{uname}}" method="POST">
         <input placeholder="Name (Agar Man h to de do, not compulsory)" type="text" name="name" />
         <input placeholder="Email(Not compulsory)" type="email" name="email"/>        
-        <textarea placeholder="Leave Message" name="msg" required></textarea>
+        <textarea placeholder="Leave Message for {{name}}" name="msg" required></textarea>
         <input class="formBtn" type="submit" />
         <input class="formBtn" type="reset" />
       </form>

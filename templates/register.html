@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title> Register | Not Sarahah </title>  
+  
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/register.css') }}">
+<style>
+	#form{
+		margin-top: 13%;
+	}
+</style>
+  
+</head>
+
+<body>
+<div id="form">
+	<center><h1 style="color:white"> <b> <i> Register, for Not Sarahah! </i></b> </h1></center>
+  <form class="signup" method="POST" action="/register">
+		<ul class="singup-list">
+				<li class="signup-item">
+						<input type="text" placeholder="Be creative" name="username" class="signup-input" required>
+						<label for="username"  class="signup-label">UserName</label>
+					</li>
+			<li class="signup-item">
+				<input type="text" placeholder="Aapka shubh Naam" name="name" class="signup-input" required>
+				<label for="name"  class="signup-label">Name</label>
+			</li>
+			<li class="signup-item">
+				<input type="email" placeholder="Your Email"  name="email" class="signup-input" required>
+				<label for="email" class="signup-label">Email</label>
+			</li>					
+			<li class="signup-item">
+				<input type="submit" class="signup-submit">
+			</li>
+		</ul>
+	</form>
+  
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li><center style="color:red">{{ message }}</center></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+</div>
+</body>
+
+</html>

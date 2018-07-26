@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title> Verify | Not Sarahah </title>
+  
+  
+  
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/register.css') }}">
+
+  
+</head>
+
+<body>
+  
+   <p>{{name}} , Please check your email {{email}} and enter the Verification number: </p>
+    <hr> 
+
+  <form  method="POST" action="/verify">
+  <label>Please enter the number:</label>
+
+
+ <input type="hidden"  name="username" value="{{uname}}">
+ <input type="hidden"  name="email" value="{{email}}">
+ <input type="hidden"  name="name" value="{{name}}">
+ <input name="otp" type="text" />
+			<br />
+
+<input  type="submit" name="submit" value="Submit">
+</form>
+  
+  
+
+</body>
+
+</html>

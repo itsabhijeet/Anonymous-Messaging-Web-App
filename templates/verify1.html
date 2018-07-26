@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+<title>Verify! Not SARAHAH</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/message.css') }}">
+
+<body>
+     
+    <div id="contactForm">
+    
+      <h2>{{name}} , Please check your email {{email}} and enter the Verification number:</h2>
+      
+      
+       <form action="/verify" method="POST">
+       <input type="hidden"  name="username" value="{{uname}}">
+       <input type="hidden"  name="email" value="{{email}}">
+       <input type="hidden"  name="name" value="{{name}}">
+        <input name="otp" type="text" />
+        <input class="formBtn" type="submit" />
+        <input class="formBtn" type="reset" />
+      </form>
+    </div>
+
+</body>
+
+</html>

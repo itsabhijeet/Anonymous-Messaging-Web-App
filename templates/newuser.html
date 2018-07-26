@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>hello</title>
+    <link href="{{ url_for('static',filename='styles/newuser.css') }}" rel="stylesheet" type="text/css">
+    
+</head>
+
+<body>
+    <div class="pop-up">
+        <img id="ninja-img" src="http://uupload.ir/files/kc6u_ninja.png" alt="">   
+        <div class="cancel"><p>x</p></div>
+        <p id="title">You are done, {{name}} ! </p>
+        <p> <b> <a href="/user/{{uname}}"> /user/{{uname}}  </a>  is your address .</b></p>
+        <p id="details">
+            <li> <b> notsarahah.pythonanywhere.com/user/{{uname}} </b> is your address. </li>
+            <li> Share this address with your friends. </li>
+            <li> Get anonymous messages on your email! ( {{email}} )</li>
+        </p>
+        
+    </div>
+</body>
+
+</html>
